@@ -1,8 +1,10 @@
-hour,min = map(int,input().split())
-total_min = hour*60+min
-new_totalmin=total_min-45
-if(new_totalmin<0):
-    new_totalmin+=24*60
-hour = new_totalmin//60
-min = new_totalmin%60
-print(hour,min)
+hour, minute = map(int, input().split())
+
+minute -= 45
+if minute < 0:
+    minute += 60
+    hour -= 1
+if hour < 0:
+    hour += 24
+
+print(hour, minute)
